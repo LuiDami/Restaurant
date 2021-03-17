@@ -1,0 +1,243 @@
+/* variables */
+:root{
+    --header: skyblue;
+    --header_letras: #007777;
+    --header_letras_shadow: #013a3a;
+    --header_letras_hover: #006464;
+    --header_letras_active: #005252;
+    --nav: #00A8A8;
+    --article: #f6f6f6;
+    --aside: rgb(8, 8, 8);
+    --footer: skyblue;
+    /* --body: rgba(0, 42, 97, 0.979); */
+    --body: rgba(255, 255, 255, 0.979);
+    --aside: #00A8A8;
+}
+
+/* reseteo de parametros */
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--body);
+    min-height: 96vh;
+    border-right: 0.25vw solid var(--nav);
+    margin-right: 1vw;
+    border-left: 0.25vw solid var(--nav);
+    margin-left: 1vw;
+}
+
+/*
+*Estructura principal y general
+*/
+
+/*-------------------------------header-------------------------------*/
+header, nav, article, footer{
+    padding: 0.5vw;
+    border-radius: 0.25rem;
+    text-align: center;
+    margin-left: 3vw;
+    margin-right: 3vw;
+    margin-bottom: 0.5vw;
+}
+header {
+    margin-top: 0.5vw;
+    height: 7vw;
+    display: flex;
+    justify-content: space-between;
+    border: 0.1vw solid var(--header_letras);
+    box-shadow:var(--header_letras) 5px 5px 10px;
+}
+header > .desconeccion{
+    display: flex;
+    width: 20%;
+}
+header > .logo{
+    /* background-image: url("./img/tenedor.ico");
+    background-repeat: no-repeat;
+    width: 100px;
+    background-color: black; */
+    width: 20%;
+    display: flex;
+    justify-content: start;
+}
+#logo{
+    width: 5.5vw;
+    height: 5.5vw;
+}
+header > .central{
+    color: var(--header_letras);
+    font-size: 1.7vw;
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow:var(--header_letras_shadow) 0.1vw 0.1vw 0.2vw;
+}
+.desconeccion{
+    /* padding: 1%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    padding-right: 2vw;
+    color: var(--header_letras);
+    font-size: 1.5vw;
+    text-shadow: 0.1rem 0.1rem gray;
+}
+#desconectar{
+    width: 100%;
+    height: 2.5vw;
+    border-radius: 0.5rem;
+    background-color: var(--header_letras);
+    font-size: 1.2vw;
+    color: white;
+    /* box-shadow: 2px 2px var(--header_letras_shadow); */
+}
+#desconectar:hover{
+    background-color: var(--header_letras_hover);
+    box-shadow: var(--header_letras_shadow) 0.2vw 0.2vw 0.5vw;
+}
+#desconectar:active{
+    background-color: var(--header_letras_active);
+    box-shadow: var(--header_letras_shadow) 0.1vw 0.1vw 0.2vw; 
+    outline: none; 
+}
+
+#desconectar:focus{
+    outline: none;
+}
+/*-------------------------------barra navegacion-------------------------------*/
+nav {
+    position: sticky;
+    top: 0vw;
+    background-color: var(--nav);
+}
+nav form{
+    height: 5vw;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.butoom_nav, .butoom_visualizar{
+    width: 15vw;
+    height: 3vw;
+    border-radius: 0.5vw;
+    font-size: 1.5vw;
+    outline: none;
+    background-color: var(--header_letras);
+    color: white;
+}
+.butoom_nav:hover, .butoom_visualizar:hover{
+    background-color: var(--header_letras_hover);
+    box-shadow: var(--header_letras_shadow) 0.2vw 0.2vw 0.5vw;
+}
+.butoom_nav:active, .butoom_visualizar:active{
+    background-color: var(--header_letras_active);
+    box-shadow: var(--header_letras_shadow) 0.1vw 0.1vw 0.2vw; 
+    outline: none; 
+}
+
+/* -------------------------------Contenido------------------------------- */
+section {
+    /* display: flex;
+    justify-content: space-around; */
+}
+article {
+    background-color: var(--article);
+    min-height: 28vw;
+
+    /* overflow-y: auto; */
+}
+
+/* -------------------------------no tenemos------------------------------- */
+/*no tenemos aside**/
+aside {
+    background-color: var(--aside);
+
+    float: left;
+    height: 25vw;
+    width: 20vw;
+    margin: 0.5vw;
+    padding: 1vw;
+    padding-top: 0.5vw;
+    
+}
+
+/*no tenemos footer*/
+footer {
+    background-color: var(--footer);
+    height: 5vw;
+}
+
+/* -------------------------------paguina principal------------------------------- */
+.pagina_principal{
+    display: flex;
+    justify-content: space-around;
+}
+.foto_usuario{
+    padding: 1vw;
+    border: 0.25vw solid var(--nav);
+    box-shadow:var(--header_letras) 5px 5px 10px;
+    display: flex;
+    align-items: center;
+}
+#foto_usuario{
+    width: 20vw;
+    border-radius: 0.5vw;
+}
+.datos_usuario{
+    width: 30vw;
+    height: 30vw;
+    border: 0.25vw solid var(--nav);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 2vw;
+    font-size: 2vw;
+    color: var(--header_letras_shadow);
+    box-shadow:var(--header_letras) 5px 5px 10px;
+}
+.datos_usuario div{
+    background-color: var(--nav) ;
+    color: white;
+    text-align: center;
+    width: 100%;
+    padding: 0.5vw;
+    text-shadow:var(--header_letras_shadow) 0.1vw 0.1vw 0.2vw;
+}
+.negrilla{
+    font-weight: bold;
+}
+.datos_usuario input{
+    display: block;
+    width: 25vw;
+    height: 3vw;
+    text-align: center;
+    font-size: 1.5vw;
+    background-color: var(--header_letras);
+    color: white;
+}
+.datos_usuario input:hover{
+    background-color: var(--header_letras_hover);
+    box-shadow: var(--header_letras_shadow) 0.2vw 0.2vw 0.5vw;
+}
+.datos_usuario input:active{
+    background-color: var(--header_letras_active);
+    box-shadow: var(--header_letras_shadow) 0.1vw 0.1vw 0.2vw; 
+    outline: none; 
+}
+#button_logo{
+    background-color: transparent;
+    outline: none; 
+    border: none;
+}
+#chef{
+    height: 10vw;
+}

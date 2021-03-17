@@ -1,0 +1,415 @@
+/* variables */
+:root{
+    --tabla_contenido: white;
+    --tabla_encabezado:#007777;;
+    --letras_tabla_encabezado: white;
+    --letras_tabla : #007777;
+    --sombra_tabla : #013b3b;
+    --sombra_tabla_hover: #006464;
+    --sombra_tabla_active: #005252;
+    --input_crear: rgb(255, 255, 255);
+    --nav: lightseagreen;
+}
+
+/* reseteo de parametros */
+*{
+    box-sizing: border-box;
+}
+/* -------------------------------principal de administracion_view------------------------------- */
+
+.menu_administradores form, .menu_trabajador {
+    min-height: 30vw;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.menu_administradores input, .menu_administradores button{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 29vw;
+    height: 9vw;
+    border-radius: 1rem;
+    font-size: 2.5vw;
+    background-color: var(--tabla_encabezado);
+    color: var(--letras_tabla_encabezado);
+}
+#contraseña_label{
+    background-color: var(--tabla_encabezado);
+    color: white;
+    padding: 0.5vw;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1vw;
+    margin-top: 1vw;
+}
+.menu_administradores button > img{
+    height: 90%;
+}
+.menu_administradores input:focus, .menu_administradores button:focus, #contraseña_label:focus, .button_eliminar:focus{
+    outline: none;
+}
+.menu_administradores input:hover, .menu_administradores button:hover, #contraseña_label:hover, .button_eliminar:hover{
+    background-color: var(--header_letras_hover);
+    box-shadow: var(--header_letras_shadow) 0.2vw 0.2vw 0.5vw;
+}
+.menu_administradores input:active, .menu_administradores button:active, #contraseña_label:active, .button_eliminar:active{
+    background-color: var(--header_letras_active);
+    box-shadow: var(--header_letras_shadow) 0.1vw 0.1vw 0.2vw; 
+    outline: none; 
+}
+
+/* -------------------------------administrar_XXX_view------------------------------- */
+
+.article_datos{
+    display: flex;
+    justify-content: center;
+    padding-top: 3vw;
+}
+.muestra_datos{/*es la tabla*/
+}
+.article_datos th, td{
+    padding: 1vw;
+    border: 0.2vw solid var(--tabla_encabezado);
+    
+    border-radius: 0.5rem;
+}
+.article_datos th{
+    position: sticky;
+    top: 5.2vw;
+    background-color: var(--tabla_encabezado);
+    color: var(--letras_tabla_encabezado);
+    font-size: 1.4vw;
+}
+.article_datos td{
+    background-color: var(--tabla_contenido);
+    color: var(--tabla_encabezado);
+    font-size: 1.2vw;
+}
+
+.article_datos input[type="submit"]{
+    width: 6vw;
+    height: 2vw;
+    border-radius: 0.5vw; 
+    background-color: var(--tabla_encabezado);
+    color: var(--letras_tabla_encabezado);
+    font-size: 1vw;
+}
+
+.article_datos input[type="submit"]:focus, .form_crear input[type="submit"]:focus{
+    outline: none;
+}
+.article_datos input[type="submit"]:hover, .form_crear input[type="submit"]:hover{
+    background-color: var(--header_letras_hover);
+    box-shadow: var(--header_letras_shadow) 0.15vw 0.15vw 0.5vw;
+}
+.article_datos input[type="submit"]:active, .form_crear input[type="submit"]:active{
+    background-color: var(--header_letras_active);
+    box-shadow: var(--header_letras_shadow) 0.1vw 0.1vw 0.2vw; 
+    outline: none; 
+}
+
+.article_datos input[type="checkbox"], input[type="radio"]{
+    margin-right: 1vw;
+    width: 1.5vw;
+    height: 1.5vw;
+}
+.div_datos{
+    width: 40vw;
+    display: flex;
+    justify-content: center;
+}
+.filtar_datos{
+    position: sticky;
+    top: 5.2vw;
+   /* width: 20vw;*/
+    margin-left: 5vw;
+    height: 28vw;
+    background-color: var(--tabla_encabezado);
+    border: 0.25vw solid var(--tabla_encabezado);
+    border-radius: 0.5rem;
+
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3vw;
+    padding: 3vw;
+}
+.filtar_datos>p{
+    color: var(--letras_tabla_encabezado);
+    padding-bottom: 1.5vw;
+    font-size: 1.7vw;
+}
+
+#form_checkbox_todos{
+    justify-content: end;
+}
+#form_checkbox_todos label{   /* .form_crear div>label */
+    width: 15vw;
+    text-align: start;
+    font-size: 1.4vw;
+}
+
+/* -------------------------------administrar_XXX_crear_view------------------------------- */
+.article_crear form{
+    display: flex;
+    justify-content: space-around;
+}
+.form_crear fieldset{
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 1.3vw;
+    padding: 3vw;
+}
+.form_crear input[type="text"], select, input[type="number"], .form_crear input[type="password"]{
+    margin-top: 0.2vw;
+    margin-bottom: 0.5vw;
+    width: 25vw;
+    height: 2vw;
+    border-radius: 0.2vw;
+    font-size: 1.2vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    background-color: var(--input_crear);
+}
+.form_crear input[type="checkbox"], input[type="radio"]{
+    margin-right: 1vw;
+    width: 1.5vw;
+    height: 1.5vw;
+}
+.form_crear input[type="submit"]{
+    margin-top: 0.5vw;
+    /* width: 35vw; */
+    width: 100%;
+    
+    font-size: 2vw;
+}
+.form_crear input[type="file"]{
+    margin-top: 0.5vw;
+    /* width: 35vw; */
+    width: 100%;
+    background-color: var(--input_crear);
+    border: 0.1vw solid black;
+    
+    font-size: 1.15vw;
+}
+
+.form_checkbox, .form_checkbox_edita{ /* .form_crear div */
+    background-color: var(--input_crear);
+    padding: 1vw;
+    width: 35vw;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5vw;
+    border: 0.1vw solid;
+    font-size: 1vw;
+}
+.form_checkbox_edita{ /* .form_crear div */
+    width: 25vw;
+}
+.form_checkbox_edita>*{
+    width: 25%;
+}
+.form_checkbox label{   /* .form_crear div>label */
+    width: 12vw;
+    text-align: start;
+}
+
+.crear_doble{  /*boton crear trabajador y platos*/
+    height: 5vw;
+    margin-top: 2.5vw;
+}
+.form_radio{
+    background-color: var(--input_crear);
+    padding: 1vw;
+    width: 25vw;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5vw;
+    border: 0.1vw solid;
+    font-size: 1vw;
+}
+.form_radio label{  /* .form_crear div>label */
+    width: 9vw;
+    text-align: start;
+}
+.form_crear textarea{
+    max-width: 35vw;
+    min-width: 35vw;
+    min-height: 10vw;
+    max-height: 15vw;
+    padding: 1vw;
+}
+.parrafo_form{
+    font-size: 1.3vw;
+    margin-top: 0.5vw;
+}
+.formulario, .crea_menu{
+    border: 0.2vw solid var(--tabla_encabezado);
+    /* box-shadow:var(--header_letras_shadow) 0.1vw 0.1vw 0.2vw; */
+    
+}
+.formulario{
+    /* box-shadow:var(--header_letras) 1vw 0.5vw 0.7vw; */
+}
+.formulario>label{
+    color: var(--tabla_encabezado);
+    text-align: start;
+}
+.formulario>legend{
+    /* background-color: var(--tabla_encabezado);
+    color: var(--letras_tabla_encabezado); */
+    color: var(--tabla_encabezado);
+    padding-left: 2vw;
+    padding-right: 2vw;
+    font-size: 2vw;
+    padding-top: 0.5vw;
+    padding-bottom: 0.5vw;
+    font-weight: bold;
+    /* border-top: 0.1vw solid #005252; */
+    border-bottom: 0.1vw solid #005252;
+    box-shadow:var(--header_letras_shadow) 0.1vw 0.1vw 0.2vw;
+    text-shadow:var(--header_letras_shadow) 0.01vw 0.01vw 0.1vw;
+    background-color: var(--tabla_contenido);
+}
+.formulario>input[type="submit"]{
+    background-color: var(--tabla_encabezado);
+    color: var(--letras_tabla_encabezado);
+}
+.crea_menu{
+    
+    height: 30vw;
+    padding: 1vw;
+}
+.crea_menu table{
+    margin: 0%;
+}
+.crea_menu_titulo{
+    background-color: var(--sombra_tabla);
+    color: var(--letras_tabla_encabezado);
+    padding: 0.5vw;
+    font-size: 1vw;
+    text-shadow:var(--header_letras_shadow) 0.1vw 0.1vw 0.2vw;
+    border: 0.2vw solid #005252;
+}
+.crea_menu_contenido{
+    height: 90%;
+    overflow-y: auto;
+    font-size: 0.8vw;
+}
+#crear_menu_submit input{
+    width: 10vw;
+    
+}
+#crear_menu_submit .crea_menu_contenido{
+    display: flex;
+    flex-direction: column;
+}
+#crear_menu_submit input[type="submit"]{
+    height: 60%;
+    background-color: var(--tabla_encabezado);
+    color: var(--letras_tabla_encabezado);
+    border-radius: 3vw;
+    margin-top: 30%;
+}
+input:focus, select, textarea{
+    outline: none;
+}
+input:focus[type="text"], input:focus[type="file"], input:focus[type="number"], select:focus, .form_crear input:focus[type="password"]{
+    /* outline: 0.25vw solid var(--letras_tabla); */
+    box-shadow: var(--letras_tabla) 0.1vw 0.1vw 0.2vw;
+}
+/* select{
+    box-shadow: var(--letras_tabla) 0.1vw 0.1vw 0.2vw;
+} */
+input:checked{
+    /*en input tipe:checkbox y que sean selecionados*/
+    background-color: var(--letras_tabla);
+}
+textarea:focus{
+    box-shadow: var(--letras_tabla) 0.1vw 0.1vw 0.2vw;
+}
+select:focus{
+    box-shadow: var(--letras_tabla) 0.1vw 0.1vw 0.2vw;
+}
+/* -------------------------------editar_XXX_crear_view------------------------------- */
+
+.foto_editar{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 1vw;
+}
+#foto_editar{
+    width: 12vw;
+}
+#receta_editar, #receta_dasabilitada{
+    max-width: 25vw;
+    min-width: 25vw;
+    min-height: 14vw;
+    max-height: 14vw;
+    padding: 1vw;
+}
+#boton_editar_bebida{
+    height: 5vw;
+    margin-top: 1.2vw;
+}
+
+.div_butoom_visualizar {
+    background-color: var(--aside);
+
+    /* float: left; */
+    height: 25.5vw;
+    width: 13%;
+    margin: 0.5vw;
+    padding-top: 0.5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.butoom_visualizar{
+    height: 10vw;
+    width: 10vw;
+}
+.mostrar_contenido{
+    width: 85%;
+    height: 50vw;
+}
+.button_eliminar{
+    padding: 0.3vw;
+    background-color: var(--tabla_encabezado);
+    color: white;
+    
+}
+/*-----------mesas*/
+#salon{
+    position: sticky;
+    top: 5.2vw;
+    padding: 0;
+    margin: 0;
+}
+
+/* #div_salon td .mesas{
+    color: white;
+    background-color: #005f95;
+    border: none;
+
+}
+#div_salon{
+
+}
+#div_salon {
+    position: sticky;
+    top: 5.2vw;
+} */
+
+/* .menu_trabajador{
+    display: flex;
+} */
